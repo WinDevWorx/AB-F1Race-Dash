@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+}
+
+.content {
+  text-align: center;
+  background: rgba(45, 55, 72, 0.8);
+  padding: 3rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 600px;
+}
+
+.icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.message {
+  color: #cbd5e0;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.instructions {
+  text-align: left;
+  background: rgba(26, 54, 93, 0.5);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #ff6b35;
+}
+
+.instructions p {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.instructions ol {
+  color: #cbd5e0;
+  padding-left: 1.5rem;
+}
+
+.instructions li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.instructions code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  color: #ff6b35;
+}

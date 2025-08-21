@@ -1,0 +1,197 @@
+.container {
+  background: rgba(26, 54, 93, 0.5);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #cbd5e0;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.timingBoard {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.headerRow {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 100px 120px 80px;
+  background: #ff6b35;
+  padding: 0.75rem 0;
+  gap: 0.5rem;
+}
+
+.headerCell {
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.timingRow {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 100px 120px 80px;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.timingRow:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.timingRow:last-child {
+  border-bottom: none;
+}
+
+.positionCell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.positionNumber {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  min-width: 28px;
+  text-align: center;
+}
+
+.driverCell {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.driverName {
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.teamCell {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.teamName {
+  color: #cbd5e0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.performanceCell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.performanceValue {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.statusCell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.statusBadge {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  text-align: center;
+  min-width: 80px;
+}
+
+.appsCell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appsValue {
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.emptyText {
+  color: #cbd5e0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .headerRow,
+  .timingRow {
+    grid-template-columns: 50px 1fr 80px 60px;
+    gap: 0.25rem;
+  }
+
+  .teamCell,
+  .statusCell {
+    display: none;
+  }
+
+  .headerCell,
+  .driverName,
+  .performanceValue,
+  .appsValue {
+    font-size: 0.75rem;
+  }
+}

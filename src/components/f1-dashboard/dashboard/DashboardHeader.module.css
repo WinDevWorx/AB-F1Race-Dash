@@ -1,0 +1,175 @@
+.header {
+  background: linear-gradient(90deg, #1a365d 0%, #2d3748 50%, #1a365d 100%);
+  border-bottom: 3px solid #ff6b35;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.f1Logo {
+  background: linear-gradient(45deg, #ff6b35, #e53e3e);
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.navButton:hover {
+  background: rgba(255, 107, 53, 0.2);
+  border-color: #ff6b35;
+  transform: translateY(-1px);
+}
+
+.navButton.active {
+  background: linear-gradient(45deg, #ff6b35, #e53e3e);
+  border-color: #ff6b35;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.navIcon {
+  font-size: 1rem;
+}
+
+.navLabel {
+  white-space: nowrap;
+}
+
+.time {
+  text-align: right;
+  min-width: 120px;
+}
+
+.timeLabel {
+  color: #cbd5e0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+}
+
+.timeValue {
+  color: #ff6b35;
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-family: 'Monaco', 'Courier New', monospace;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .nav {
+    justify-content: center;
+  }
+  
+  .navButton {
+    flex-direction: column;
+    padding: 0.5rem;
+    min-width: 80px;
+  }
+  
+  .navLabel {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navButton .navLabel {
+    display: none;
+  }
+  
+  .navButton {
+    min-width: 48px;
+    padding: 0.75rem;
+  }
+  
+  .title {
+    font-size: 1rem;
+  }
+}
+
+/* New styles for right section and quick navigation */
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quickNav {
+  display: flex;
+  align-items: center;
+}
+
+.quickNavLink {
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 107, 53, 0.1);
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  border-radius: 6px;
+  color: #ff6b35;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.quickNavLink:hover {
+  background: rgba(255, 107, 53, 0.2);
+  border-color: #ff6b35;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.2);
+}

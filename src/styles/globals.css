@@ -17,3 +17,6 @@ body{
   height: 100vh;
   min-height: 100%;
 }
+
+/* F1 Racing Dashboard Theme */
+@import '../styles/f1-dashboard/theme.css';

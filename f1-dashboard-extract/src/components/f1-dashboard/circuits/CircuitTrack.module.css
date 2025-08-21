@@ -1,0 +1,82 @@
+.container {
+  background: rgba(26, 54, 93, 0.5);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trackWrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.trackSvg {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  border-radius: 8px;
+}
+
+.racingLine {
+  filter: drop-shadow(0 0 4px currentColor);
+  animation: pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+.startFinish {
+  filter: drop-shadow(0 0 6px #22c55e);
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.trackInfo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  background: rgba(45, 55, 72, 0.6);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.infoLabel {
+  color: #cbd5e0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+}
+
+.infoValue {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .trackInfo {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .infoItem {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

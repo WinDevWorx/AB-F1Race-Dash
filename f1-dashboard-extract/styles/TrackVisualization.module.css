@@ -1,0 +1,389 @@
+/* Track Visualization Styles */
+.circuitView {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: white;
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #ff6b35, #f7931e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+}
+
+.circuitGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Track Section */
+.trackSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.trackCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.trackHeader {
+  background: rgba(255, 107, 53, 0.1);
+  border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+  padding: 1.5rem;
+}
+
+.trackHeader .card-title {
+  color: #ff6b35;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.circuitInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.trackContent {
+  padding: 1.5rem;
+  background: #1a1a1a;
+}
+
+.trackContainer {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+/* Timing Card */
+.timingCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  border-radius: 12px;
+}
+
+.timingHeader {
+  background: rgba(255, 107, 53, 0.1);
+  border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timingHeader .card-title {
+  color: #ff6b35;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.liveIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #22c55e;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.liveDot {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Timing Board */
+.timingBoard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timingHeader {
+  display: grid;
+  grid-template-columns: 60px 2fr 100px 120px 120px;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: rgba(255, 107, 53, 0.1);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ff6b35;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.timingBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.timingRow {
+  display: grid;
+  grid-template-columns: 60px 2fr 100px 120px 120px;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  align-items: center;
+}
+
+.timingRow:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.positionCol, .driverCol, .teamCol, .timeCol, .gapCol {
+  display: flex;
+  align-items: center;
+}
+
+.positionNumber {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.driverName {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.teamSize {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.achievement {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.salesValue {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Sidebar Section */
+.sidebarSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Card Styles */
+.infoCard, .statsCard, .fastestCard, .conditionsCard, .sectorsCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.infoCard .card-header,
+.statsCard .card-header,
+.fastestCard .card-header,
+.conditionsCard .card-header,
+.sectorsCard .card-header {
+  background: rgba(255, 107, 53, 0.1);
+  border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+  padding: 1rem;
+}
+
+.infoCard .card-title,
+.statsCard .card-title,
+.fastestCard .card-title,
+.conditionsCard .card-title,
+.sectorsCard .card-title {
+  color: #ff6b35;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Info List */
+.infoList, .statsList, .fastestList, .conditionsList, .sectorsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.infoItem, .statItem, .fastestItem, .conditionItem, .sectorItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.infoItem:last-child,
+.statItem:last-child,
+.fastestItem:last-child,
+.conditionItem:last-child,
+.sectorItem:last-child {
+  border-bottom: none;
+}
+
+.infoLabel, .statLabel, .conditionLabel {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.infoValue, .statValue, .conditionValue {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* Fastest Laps */
+.fastestDriver, .sectorInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fastestVehicle, .sectorVehicle {
+  font-size: 1rem;
+}
+
+.fastestName, .sectorName {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.fastestTime, .sectorLeader {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Progress Bar */
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
+  border-radius: 4px;
+  transition: width 0.8s ease;
+}
+
+.progressLabels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.currentProgress {
+  color: #ff6b35;
+  font-weight: 600;
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.emptyState h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.emptyState p {
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .circuitGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .sidebarSection {
+    grid-row: 1;
+  }
+  
+  .trackSection {
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+  
+  .container {
+    padding: 0 0.5rem;
+  }
+  
+  .timingHeader, .timingRow {
+    grid-template-columns: 50px 1.5fr 80px 100px 100px;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .trackContainer {
+    height: 300px;
+  }
+}

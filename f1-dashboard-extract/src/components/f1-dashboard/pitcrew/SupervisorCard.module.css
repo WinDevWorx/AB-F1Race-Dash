@@ -1,0 +1,188 @@
+.card {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  border: 2px solid #3b82f6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.position {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fbbf24;
+}
+
+.circuit {
+  font-size: 0.9rem;
+  color: #d1d5db;
+  font-weight: 500;
+}
+
+.driver {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.driverName {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+  color: #ffffff;
+}
+
+.driverRole {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fbbf24;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.performanceLevel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.metric {
+  text-align: center;
+}
+
+.metricValue {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fbbf24;
+}
+
+.metricLabel {
+  font-size: 0.7rem;
+  color: #d1d5db;
+  margin-top: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pitCrew {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.pitCrewHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.pitCrewIcon {
+  font-size: 1.1rem;
+}
+
+.pitCrewTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #d1d5db;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pitCrewList {
+  max-height: 150px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #3b82f6 transparent;
+}
+
+.pitCrewList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.pitCrewList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pitCrewList::-webkit-scrollbar-thumb {
+  background-color: #3b82f6;
+  border-radius: 2px;
+}
+
+.crewMember {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  transition: background 0.2s ease;
+}
+
+.crewMember:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.crewName {
+  font-size: 0.85rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.crewPerformance {
+  font-size: 0.8rem;
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    padding: 1rem;
+  }
+  
+  .metrics {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .metricValue {
+    font-size: 1rem;
+  }
+  
+  .metricLabel {
+    font-size: 0.65rem;
+  }
+  
+  .driverName {
+    font-size: 1.1rem;
+  }
+}
