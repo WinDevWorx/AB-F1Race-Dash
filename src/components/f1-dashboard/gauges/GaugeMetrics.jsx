@@ -41,7 +41,7 @@ export default function GaugeMetrics({
   return (
     <div className={styles.container}>
       <div className={styles.grid}>
-        {metrics.map(metric => (
+        {/* {metrics.map(metric => (
           <div 
             key={metric.id} 
             className={styles.card}
@@ -64,23 +64,10 @@ export default function GaugeMetrics({
               {metric.value.toLocaleString()}
             </div>
           </div>
-        ))}
+        ))} */}
       </div>
       
-      <div className={styles.summary}>
-        <div className={styles.summaryItem}>
-          <span className={styles.summaryLabel}>Overall Performance</span>
-          <span 
-            className={styles.summaryValue}
-            style={{ 
-              color: averageAchievement >= 100 ? '#22c55e' : 
-                     averageAchievement >= 80 ? '#f59e0b' : '#ef4444'
-            }}
-          >
-            {averageAchievement?.toFixed(1) || '0.0'}%
-          </span>
-        </div>
-      </div>
+   
     </div>
   );
 }

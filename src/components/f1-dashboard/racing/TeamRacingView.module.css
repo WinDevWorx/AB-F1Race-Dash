@@ -1,3 +1,11 @@
+@font-face {
+  font-family:"Formula1";
+  src: url("/public/fonts/Formula1-Wide_web_0.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 .container {
   width: 100%;
 }
@@ -17,9 +25,10 @@
 }
 
 .circuitName {
-  font-size: 1.3rem;
+  font-size: 2.3rem;
   font-weight: 600;
-  color: #ff6b35;
+  font-family: "Formula1", monospace;
+  color: #2c2c2cd7;
   margin: 0;
   text-transform: uppercase;
 }
@@ -54,11 +63,11 @@
 .driverRow {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 0.2rem;
+  /* padding: 1rem; */
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px dotted rgba(95, 95, 95, 0.726);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -90,14 +99,22 @@
   font-size: 1.5rem;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
-
+/* 
 .vehicleIcon {
   display: inline-block;
   animation: raceMotion 3s ease-in-out infinite;
-  transform: scaleX(-1); /* Flip horizontally to face right */
-}
+  transform: scaleX(-1); 
+} */
 
-@keyframes raceMotion {
+
+.vehicleIcon {
+  display: inline-block;
+  padding-top: 35px;
+  font-size: 1.8rem; /* Increased from 1.5rem to make it bigger */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  animation: raceMotion 3s ease-in-out infinite;
+}
+/* @keyframes raceMotion {
   0%, 100% { 
     transform: translateX(0) scale(1); 
   }
@@ -110,23 +127,38 @@
   75% { 
     transform: translateX(-2px) scale(0.95); 
   }
-}
+} */
 
+
+@keyframes raceMotion {
+  0%, 100% { 
+    transform: translateX(0) scale(1) scaleX(-1); /* Include scaleX(-1) in all transforms */
+  }
+  25% { 
+    transform: translateX(2px) scale(1.05) scaleX(-1); 
+  }
+  50% { 
+    transform: translateX(0) scale(1) scaleX(-1); 
+  }
+  75% { 
+    transform: translateX(-2px) scale(0.95) scaleX(-1); 
+  }
+}
 .driverInfo {
   flex: 1;
   min-width: 200px;
 }
 
 .driverName {
-  font-size: 1.1rem;
+  font-size: 1.8rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 0.25rem;
 }
 
 .teamInfo {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(71, 71, 71, 0.6);
 }
 
 .performanceBar {
@@ -142,7 +174,7 @@
 .vehiclePosition {
   position: absolute;
   top: -8px;
-  transform: translateX(-50%);
+  transform: translateY(-50%);
   z-index: 10;
   transition: left 1s ease-out;
 }
@@ -157,7 +189,7 @@
   padding-right: 0.5rem;
   position: relative;
   transition: width 1s ease-out;
-  min-width: 60px;
+  /* min-width: 60px; */
 }
 
 .performanceBadge {
@@ -165,7 +197,7 @@
   color: #ffffff;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
-  font-size: 0.8rem;
+  font-size: 1.8rem;
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -178,13 +210,13 @@
 .currentSales {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #2e2d2d;
   margin-bottom: 0.25rem;
 }
 
 .targetSales {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.555);
 }
 
 .finishLine {
@@ -259,14 +291,14 @@
   grid-template-columns: 80px 2fr 120px 100px 120px 120px 120px 80px;
   gap: 1rem;
   padding: 1rem;
-  background: rgba(255, 107, 53, 0.1);
-  border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+  /* background: rgba(255, 107, 53, 0.1); */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.856);
 }
 
 .headerCell {
   font-size: 0.8rem;
   font-weight: 600;
-  color: #ff6b35;
+  color: #16161681;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -281,7 +313,7 @@
   grid-template-columns: 80px 2fr 120px 100px 120px 120px 120px 80px;
   gap: 1rem;
   padding: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.404);
   transition: background-color 0.3s ease;
 }
 
@@ -292,7 +324,8 @@
 .tableCell {
   display: flex;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .positionContainer {
@@ -309,17 +342,19 @@
   padding: 0.25rem 0.5rem;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .achievementRate {
   font-weight: 600;
+  font-size: 1rem;
 }
 
 .salesAmount, .targetAmount {
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .vehicleEmoji {
@@ -391,3 +426,6 @@
     display: none;
   }
 }
+
+
+

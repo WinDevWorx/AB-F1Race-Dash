@@ -1,16 +1,23 @@
 import { useMemo } from 'react';
 import styles from './PitCrewHighlights.module.css';
 
+
+
 export default function PitCrewHighlights({ consultants }) {
   const performanceCategories = useMemo(() => {
     if (!consultants || consultants.length === 0) return [];
+
+    const today = new Date().getDate();
+
+
+    
 
     const categories = [
       {
         id: 'podium-pushers',
         name: 'Podium Pushers',
         description: 'Elite Performers (120%+)',
-        icon: '🏎️',
+        icon: '🏆',
         color: '#22c55e',
         backgroundColor: 'rgba(34, 197, 94, 0.1)',
         filter: (c) => (c.salesAchievement || c.achievementRate || 0) >= 120,
@@ -20,7 +27,7 @@ export default function PitCrewHighlights({ consultants }) {
         id: 'pit-masters',
         name: 'Pit Masters', 
         description: 'Target Achievers (100-119%)',
-        icon: '🏎️',
+        icon: '🏁',
         color: '#3b82f6',
         backgroundColor: 'rgba(59, 130, 246, 0.1)',
         filter: (c) => {
@@ -33,7 +40,7 @@ export default function PitCrewHighlights({ consultants }) {
         id: 'pit-stabilizers',
         name: 'Pit Crew Stabilizers',
         description: 'On Track (80-99%)',
-        icon: '🏎️',
+        icon: '🛣️',
         color: '#f59e0b',
         backgroundColor: 'rgba(245, 158, 11, 0.1)',
         filter: (c) => {
@@ -46,7 +53,7 @@ export default function PitCrewHighlights({ consultants }) {
         id: 'boost-needed',
         name: 'Boost Needed',
         description: 'Needs Support (60-79%)',
-        icon: '🏎️',
+        icon: '⛽',
         color: '#f97316',
         backgroundColor: 'rgba(249, 115, 22, 0.1)',
         filter: (c) => {
@@ -59,15 +66,33 @@ export default function PitCrewHighlights({ consultants }) {
         id: 'recovery-mode',
         name: 'Recovery Mode',
         description: 'Critical Support (<60%)',
-        icon: '🏎️',
+        icon: '🛠️',
         color: '#ef4444',
         backgroundColor: 'rgba(239, 68, 68, 0.1)',
-        filter: (c) => (c.salesAchievement || c.achievementRate || 0) < 60,
+        // filter: (c) => (c.salesAchievement || c.achievementRate || 0) < 60,
+        // ADD RANGE HERE TO EXCLUDE UPER BOUND VALUES OF THE BELOW CAT. achievement >= 60 && achievement 
+        filter: (c) => {  const achievement = c.salesAchievement || c.achievementRate  ; return achievement < 60;},
+        carColor: '#ef4444'
+      },
+      {
+        id: 'starting-Block',
+        name: 'Starting Block',
+        description: 'Starting Block(<35%) ',
+        icon: '🧱',
+        color: '#a642f8ff',
+        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+        // ADD A RANGE HERE 
+        filter: (c) => { if (today <= 7 ) return false; const achievement = c.salesAchievement || c.achievementRate || 0 ; return achievement < 10;},
         carColor: '#ef4444'
       }
     ];
 
     return categories.map(category => {
+      {/* 
+        var dateNow = new Date()
+        var dateThreshold = new Date(MM-DD-YY)
+
+        */}
       const members = consultants.filter(category.filter);
       const avgPerformance = members.length > 0 
         ? members.reduce((sum, m) => sum + (m.salesAchievement || m.achievementRate || 0), 0) / members.length 
@@ -76,7 +101,7 @@ export default function PitCrewHighlights({ consultants }) {
       return {
         ...category,
         count: members.length,
-        members: members.slice(0, 2), // Show top 2 performers
+        members: members.slice(0, 6), // Show top 2 performers
         avgPerformance
       };
     });
@@ -110,7 +135,7 @@ export default function PitCrewHighlights({ consultants }) {
             
             <div className={styles.countBadge}>
               <span className={styles.countNumber}>{category.count}</span>
-              <span className={styles.countLabel}>members</span>
+              <span className={styles.countLabel}>Consultants</span>
             </div>
           </div>
 
@@ -149,11 +174,11 @@ export default function PitCrewHighlights({ consultants }) {
                   </div>
                 );
               })}
-              {category.count > 2 && (
+              {/* {category.count > 2 && (
                 <div className={styles.moreMembers}>
                   +{category.count - 2} more
                 </div>
-              )}
+              )} */}
             </div>
           )}
         </div>

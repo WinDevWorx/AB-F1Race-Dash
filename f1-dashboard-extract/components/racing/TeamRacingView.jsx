@@ -106,7 +106,7 @@ export default function TeamRacingView({ circuit, supervisors, consultants, allS
                     </span>
                   </div>
                   <div className={styles.tableCell}>
-                    <span className={styles.vehicleIcon}>🏎️</span>
+                    <span className={styles.vehicleIcon}>⚽</span>
                   </div>
                 </div>
               );
@@ -183,7 +183,7 @@ export default function TeamRacingView({ circuit, supervisors, consultants, allS
                     left: `${Math.min(achievement, 100)}%`
                   }}
                 >
-                  <span className={styles.vehicleIcon}>🏎️</span>
+                  <span className={styles.vehicleIcon}>⚽</span>
                 </div>
               </div>
 
@@ -208,7 +208,7 @@ export default function TeamRacingView({ circuit, supervisors, consultants, allS
 
       {(!supervisors || supervisors.length === 0) && (
         <div className={styles.emptyState}>
-          <div className={styles.emptyIcon}>🏎️</div>
+          <div className={styles.emptyIcon}>⚽</div>
           <p className={styles.emptyText}>No drivers on {circuit} circuit</p>
         </div>
       )}

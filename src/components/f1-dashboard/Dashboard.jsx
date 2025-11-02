@@ -576,32 +576,13 @@ export default function Dashboard() {
             )}
             {activeTab === 'pitcrew' && (
               <>
-                <div style={{ 
-                  background: '#000', 
-                  color: '#0f0', 
-                  padding: '20px', 
-                  fontFamily: 'monospace',
-                  border: '5px solid #0f0',
-                  fontSize: '16px',
-                  margin: '20px'
-                }}>
-                  <div style={{ fontSize: '20px', fontWeight: 'bold', color: '#ff0' }}>🚨 DEBUG: PIT CREW TAB ACTIVATED! 🚨</div>
-                  <br/>
-                  ActiveTab: <span style={{color: '#ff0'}}>{activeTab}</span><br/>
-                  ExcelData available: <span style={{color: excelData ? '#0f0' : '#f00'}}>{excelData ? 'YES' : 'NO'}</span><br/>
-                  Consultants count: <span style={{color: '#0ff'}}>{displayData.consultants?.length || 0}</span><br/>
-                  Teams count: <span style={{color: '#0ff'}}>{displayData.teams?.length || 0}</span><br/>
-                  Sample consultant name: <span style={{color: '#fff'}}>{displayData.consultants?.[0]?.consultantName || 'NONE'}</span><br/>
-                  <br/>
-                  <div style={{color: '#f0f'}}>If you see this but no PitCrewView component below, there's a rendering issue!</div>
-                </div>
+           
                 <PitCrewView 
-                  consultants={displayData.consultants || []}
-                  teams={displayData.teams || []}
+                  consultants={displayData.consultants && console.log("Pit-Called")}
                 />
               </>
             )}
-            {activeTab === 'monaco' && (
+            {activeTab === 'Monaco' && (
               <MonacoCircuitView 
                 data={{ supervisors: displayData.teams?.filter(team => team.circuit === 'Monaco') }}
                 companyMetrics={displayData.companyMetrics}

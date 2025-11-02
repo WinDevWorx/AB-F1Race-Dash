@@ -233,7 +233,7 @@ export class ExcelProcessor {
       'Tshepo Moeketsi'
     ];
     
-    if (monacoSupervisors.includes(supervisorName)) {
+    if (Supervisors.includes(supervisorName)) {
       return 'Monaco';
     } else if (kyalamiSupervisors.includes(supervisorName)) {
       return 'Kyalami';

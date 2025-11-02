@@ -1,5 +1,8 @@
 import styles from './TeamRacingView.module.css';
 
+
+
+
 export default function TeamRacingView({ circuit, supervisors, consultants, allSupervisors = [] }) {
   const getPerformanceColor = (achievement) => {
     if (achievement >= 100) return '#22c55e';
@@ -31,13 +34,13 @@ export default function TeamRacingView({ circuit, supervisors, consultants, allS
         <div className={styles.championshipTable}>
           <div className={styles.tableHeader}>
             <div className={styles.headerCell}>Position</div>
-            <div className={styles.headerCell}>Driver (Supervisor)</div>
-            <div className={styles.headerCell}>Circuit</div>
+            <div className={styles.headerCell}>Captain (Supervisor)</div>
+            <div className={styles.headerCell}>Region</div>
             <div className={styles.headerCell}>Team Size</div>
             <div className={styles.headerCell}>Achievement</div>
             <div className={styles.headerCell}>Sales</div>
             <div className={styles.headerCell}>Target</div>
-            <div className={styles.headerCell}>Vehicle</div>
+            {/* <div className={styles.headerCell}>Vehicle</div> */}
           </div>
           
           <div className={styles.tableBody}>
@@ -78,7 +81,7 @@ export default function TeamRacingView({ circuit, supervisors, consultants, allS
                     <span 
                       className={styles.circuitBadge}
                       style={{ 
-                        color: circuit.toLowerCase() === 'monaco' ? '#FF6B35' : '#4ECDC4'
+                        color: circuit.toLowerCase() === 'region' ? '#FF6B35' : '#4ECDC4'
                       }}
                     >
                       {circuit}
@@ -105,9 +108,9 @@ export default function TeamRacingView({ circuit, supervisors, consultants, allS
                       R{(salesTarget / 1000000).toFixed(1)}M
                     </span>
                   </div>
-                  <div className={styles.tableCell}>
-                    <span className={styles.vehicleIcon}>🏎️</span>
-                  </div>
+                  {/* <div className={styles.tableCell}>
+                    <span className={styles.vehicleIcon}>⚽</span>
+                  </div> */}
                 </div>
               );
             })}
@@ -123,7 +126,7 @@ export default function TeamRacingView({ circuit, supervisors, consultants, allS
       <div className={styles.header}>
         <div className={styles.trackInfo}>
           <h3 className={styles.circuitName}>
-            🏁 Live Positions - {circuit} Circuit
+             Live Positions - {circuit} 
           </h3>
           <div className={styles.liveTiming}>
             <span className={styles.liveIndicator}>●</span>
@@ -183,7 +186,7 @@ export default function TeamRacingView({ circuit, supervisors, consultants, allS
                     left: `${Math.min(achievement, 100)}%`
                   }}
                 >
-                  <span className={styles.vehicleIcon}>🏎️</span>
+                  <span className={styles.vehicleIcon}>⚽</span>
                 </div>
               </div>
 
@@ -208,7 +211,7 @@ export default function TeamRacingView({ circuit, supervisors, consultants, allS
 
       {(!supervisors || supervisors.length === 0) && (
         <div className={styles.emptyState}>
-          <div className={styles.emptyIcon}>🏎️</div>
+          <div className={styles.emptyIcon}>⚽</div>
           <p className={styles.emptyText}>No drivers on {circuit} circuit</p>
         </div>
       )}

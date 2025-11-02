@@ -1,22 +1,134 @@
+
+@font-face {
+  font-family:"Formula1";
+  src: url("/public/fonts/Formula1-Wide_web_0.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 html {
     height: 100%;
     max-width: none;
+    /* font-family: 'Noto Serif', serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif; */
+    font-family: "Formular1", monospace;
+  }
+  
+  body {
+    /* background-size: contain;
+    background-image: linear-gradient(to right bottom, #002a5e, #005486, #007c8a, #00a06e, #88bc47); */
+    background: rgb(255, 255, 255);
+    background-image: radial-gradient(
+      to bottom,
+      #ffffff,
+      #fafafa,
+      #f5f5f5,
+      #f0f0f0,
+      #fafafa,
+      #e6e6e6,
+      #f3f3f3,
+      #ffffff
+    );
+    max-width: none;
+    height: 100vh;
+    min-height: 100%;
+    font-family: "Formular1", monospace;
+  }
+  
+
+
+/* F1 Racing Dashboard Theme */
+@import './theme.css';
+
+.f1-racing-theme {
+  --primary-orange: #ff6b35;
+  --primary-red: #e53e3e;
+  --background-light: #fdffe4;
+  --background-white: #fafafa;
+  --text-dark: #1a1a1a;
 }
 
+body {
+  font-family: 'Inter', 'Formular1', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #fdffe4 0%, #fafafa 100%);
+  min-height: 100vh;
+}
 
-body{
-  /* background-size: contain;
-  background-image: linear-gradient(to right bottom, #002a5e, #005486, #007c8a, #00a06e, #88bc47); */
-  background: rgb(0,84,134);
-  background: radial-gradient(circle, rgba(136,188,71,1)  0%, rgba(0,84,134,1) 100%);
-  max-width: none;
-  /* padding-left: 24px; */
-   /* display: grid;
-   grid-template-rows: auto 1fr auto; */
-  /* grid-template-columns: 1fr 6fr; */
-  height: 100vh;
-  min-height: 100%;
+html {
+  scroll-behavior: auto;
 }
 
 /* F1 Racing Dashboard Theme */
-@import '../styles/f1-dashboard/theme.css';
+@import './theme.css';
+
+.f1-racing-theme {
+  --primary-orange: #ff6b35;
+  --primary-red: #e53e3e;
+  --background-light: #fbfcf5;
+  --background-white: #fafafa;
+  --text-dark: #1a1a1a;
+}
+
+
+
+html {
+  scroll-behavior: auto;
+}
+
+/* F1 Racing Dashboard Theme - Added by install script */
+@import './theme.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #fffffa 0%, #fafafa 100%);
+  min-height: 100vh;
+}
+
+/* Hide default scrollbar for smooth custom scrolling */
+html {
+  scroll-behavior: auto; /* Disable browser smooth scroll for custom animations */
+}
+
+/* Enhanced racing theme for device optimization */
+.f1-racing-theme {
+  --primary-orange: #ff6b35;
+  --primary-red: #e53e3e;
+  --background-light: #fdffe4;
+  --background-white: #fafafa;
+  --text-dark: #1a1a1a;
+  --text-medium: rgba(0, 0, 0, 0.8);
+  --border-light: rgba(255, 255, 255, 0.1);
+}
+
+/* F1 Racing Dashboard Theme - Added by install script */
+@import './theme.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Hide default scrollbar for smooth custom scrolling */
+html {
+  scroll-behavior: auto; /* Disable browser smooth scroll for custom animations */
+}
+
+/* Enhanced racing theme for device optimization */
+.f1-racing-theme {
+  --primary-orange: #ff6b35;
+  --primary-red: #e53e3e;
+  --background-light: #fcfcfc;
+  --background-white: #fafafa;
+  --text-dark: #1a1a1a;
+  --text-medium: rgba(0, 0, 0, 0.8);
+  --border-light: rgba(255, 255, 255, 0.1);
+}

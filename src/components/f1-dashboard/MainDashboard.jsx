@@ -6,6 +6,7 @@ import PitCrewContainer from './pitcrew/PitCrewContainer';
 import TeamRacingContainer from './racing/TeamRacingContainer';
 import MonacoCircuitView from './circuits/MonacoCircuitView';
 import KyalamiCircuitView from './circuits/KyalamiCircuitView';
+import PitCrewPage from './PitCrewPage';
 
 export default function MainDashboard({ data }) {
   const [activeTab, setActiveTab] = useState('total');
@@ -37,6 +38,8 @@ export default function MainDashboard({ data }) {
         );
       case 'team':
         return <TeamRacingContainer data={data} />;
+      case 'pitcrew':
+        return <PitCrewPage data={data} />
       case 'monaco':
         return <MonacoCircuitView data={data} />;
       case 'kyalami':
