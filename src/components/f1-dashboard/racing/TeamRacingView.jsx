@@ -9,10 +9,11 @@ export default function TeamRacingView({
   // Points system configuration
   const POINTS_TARGET = 500;
   const WEIGHTS = {
-    loanDealsVol: 0.5,
+    loanDealsVol: 0.25,
     cardDealsVol: 0.25,
-    myWorldFundedAccs: 1.25,
-    activePolicies: 0.25,
+    myWorldFundedAccs: 0.5,
+    activePolicies: 0.75,
+    investments: 0.00938,  // only multiplied to INV -Values over 100k
   };
 
   // points system changes

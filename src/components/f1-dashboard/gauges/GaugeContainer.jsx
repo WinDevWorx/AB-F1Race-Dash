@@ -1,6 +1,7 @@
 import GaugeDisplay from "./GaugeDisplay";
 import GaugeMetrics from "./GaugeMetrics";
 import styles from "./GaugeContainer.module.css";
+import PointsChestView from "./PointsChestView";
 
 export default function GaugeContainer({ data }) {
   if (!data || !data.companyMetrics) {
@@ -22,7 +23,7 @@ export default function GaugeContainer({ data }) {
   // Prepare data for 4 gauges
   const gaugeData = [
     {
-      title: "Total Sales",
+      title: "Loans & Credit Card",
       currentValue:
         companyMetrics.totalSalesActual || companyMetrics.currentValue || 0,
       targetValue:
@@ -35,19 +36,19 @@ export default function GaugeContainer({ data }) {
         0,
     },
     {
-      title: "Applications",
+      title: "Funeral Cover",
       currentValue: companyMetrics.totalAppsActual || 0,
       targetValue: companyMetrics.totalAppsTarget || 0,
       averageAchievement: companyMetrics.appsAchievement || 0,
     },
     {
-      title: "Consultant Performance",
+      title: "MyWorld",
       currentValue: companyMetrics.consultantPerformance || 0,
       targetValue: 100,
       averageAchievement: companyMetrics.consultantAchievement || 0,
     },
     {
-      title: "Supervisor Performance",
+      title: "Investments",
       currentValue: companyMetrics.supervisorPerformance || 0,
       targetValue: 100,
       averageAchievement: companyMetrics.supervisorAchievement || 0,
@@ -55,7 +56,8 @@ export default function GaugeContainer({ data }) {
   ];
 
   return (
-    <div className={styles.container}>
+    <>
+       <div className={styles.container}>
       <div className={styles.header}>
         <h3 className={styles.title}>SALES CHAMPIONSHIP PROGRESS</h3>
         {/* <p className={styles.subtitle}>
@@ -88,5 +90,17 @@ export default function GaugeContainer({ data }) {
         averageAchievement={companyMetrics.salesAchievement || companyMetrics.overallAchievement || 0}
       /> */}
     </div>
+
+
+
+    <div className={styles.container}>
+
+      <PointsChestView/>
+
+    </div>
+    </>
+ 
+
+  
   );
 }

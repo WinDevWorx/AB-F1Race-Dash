@@ -4,6 +4,11 @@ import MainDashboard from "./MainDashboard";
 
 /**
  * F1 Racing Dashboard - Main Component for Next.js Integration
+ * 
+ * 
+ * We add a new function for excelProcessing -- loadPointsChestData = async () => {}
+ * 
+ * 
  */
 export default function F1RacingDashboard({ excelPath = "/Book1.xlsx" }) {
   const [data, setData] = useState(null);
