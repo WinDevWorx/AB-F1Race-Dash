@@ -10,8 +10,6 @@ export default function GaugeContainer({ data }) {
 
   const { companyMetrics } = data;
 
-
-
   // Debug logging to trace the data flow
   console.log("GaugeContainer received data:", data);
   console.log("GaugeContainer companyMetrics:", companyMetrics);
@@ -22,7 +20,7 @@ export default function GaugeContainer({ data }) {
     companyMetrics.totalSalesTarget
   );
 
-  // Prepare data for 4 gauges
+  // Prepare data for 4 gauges with correct value types
   const gaugeData = [
     {
       title: "Credit",
@@ -36,27 +34,28 @@ export default function GaugeContainer({ data }) {
         companyMetrics.salesAchievement ||
         companyMetrics.overallAchievement ||
         0,
+      valueType: "currency", // This is currency
     },
-    /* NEW GAUGES AND VALUES*/
     {
       title: "MyWorld",
-      currentValue:  companyMetrics.totalMyWorldFunded || 0,
+      currentValue: companyMetrics.totalMyWorldFundedVol || 0, // Fixed: was totalMyWorldFunded
       targetValue: companyMetrics.totalMyWorldTarget || 0,
       averageAchievement: companyMetrics.myWorldAchievement || 0,
+      valueType: "volume", // This is volume
     },
     {
       title: "Funeral",
       currentValue: companyMetrics.totalFuneralVol || 0,
       targetValue: companyMetrics.totalFuneralTarget || 0,
       averageAchievement: companyMetrics.funeralAchievement || 0,
+      valueType: "volume", // This is volume
     },
-
-    /* New Gauge NO DATA YET  */
     {
       title: "Investments",
       currentValue: 0 || 0,
       targetValue: 115,
       averageAchievement: 5 || 0,
+      valueType: "volume", // This is volume
     },
   ];
 
@@ -77,12 +76,11 @@ export default function GaugeContainer({ data }) {
                 currentValue={gauge.currentValue}
                 targetValue={gauge.targetValue}
                 averageAchievement={gauge.averageAchievement}
+                valueType={gauge.valueType}
               />
             </div>
           ))}
         </div>
-
-
       </div>
 
       <h3 className={`${styles.title} ${styles.Slackey}`}> Championship Pool</h3>

@@ -6,6 +6,7 @@ export default function GaugeDisplay({
   targetValue,
   averageAchievement,
   title,
+  valueType = "currency", // New prop: "currency" or "volume"
 }) {
   const gaugeData = useMemo(() => {
     const percentage = targetValue > 0 ? (currentValue / targetValue) * 100 : 0;
@@ -14,15 +15,27 @@ export default function GaugeDisplay({
     // Needle angle (semi-circle from -90° to +90°)
     const needleAngle = -90 + (clampedPercentage / 100) * 180;
 
+    // Format values based on type
+    let currentFormatted, targetFormatted;
+    
+    if (valueType === "currency") {
+      currentFormatted = `R${(currentValue / 1000000).toFixed(1)}M`;
+      targetFormatted = `R${(targetValue / 1000000).toFixed(1)}M`;
+    } else {
+      // Volume type - just display the number
+      currentFormatted = Math.round(currentValue).toLocaleString();
+      targetFormatted = Math.round(targetValue).toLocaleString();
+    }
+
     return {
       percentage: clampedPercentage,
       needleAngle,
-      currentFormatted: `R${(currentValue / 1000000).toFixed(1)}M`,
-      targetFormatted: `R${(targetValue / 1000000).toFixed(1)}M`,
+      currentFormatted,
+      targetFormatted,
       currentValue,
       targetValue,
     };
-  }, [currentValue, targetValue]);
+  }, [currentValue, targetValue, valueType]);
 
   return (
     <div className={styles.container}>
