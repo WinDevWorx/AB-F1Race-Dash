@@ -1,3 +1,43 @@
+@font-face {
+  font-family: "BungeeShade-Regular";
+  src: url("/fonts/BungeeShade-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FastOne";
+  src: url("/fonts/FasterOne.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Slackey";
+  src: url("/fonts/Slackey.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.BungeeShade_Regular {
+  font-family: "BungeeShade-Regular", sans-serif;
+}
+
+.FastOne {
+  font-family: "FastOne", sans-serif;
+}
+
+
+.Slackey {
+  font-family: "Slackey", sans-serif;
+}
+
+
+
+
+
+
 .container {
   background: linear-gradient(135deg, #f8fafc 0%, #f3f4f7 100%);
   border-radius: 12px;
@@ -14,13 +54,14 @@
 
 .title {
   color: #0c0c0c;
-  font-size: 2.6rem;
-  font-weight: 700;
+  font-size: 5.6rem;
+  /* font-weight: 700; */
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 1px;
   margin-bottom: 0.25rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
+  text-shadow: 0 5px 4px rgb(0 33 99 / 50%);
 }
 
 .subtitle {
@@ -42,8 +83,26 @@
   justify-content: center;
   align-items: center;
   min-height: 0;
+  
 }
 
+
+.gaugeItem:nth-child(1){
+  background: linear-gradient(1deg, #002b60, #00d71c94);
+}
+
+
+.gaugeItem:nth-child(2){
+  background: linear-gradient(3deg, #002b60, #1d63e794);
+}
+
+.gaugeItem:nth-child(3){
+  background: linear-gradient(1deg, #002b60,  #a100d794);
+}
+
+.gaugeItem:nth-child(4){
+  background: linear-gradient(1deg, #002b60, #ee8c0cdb);
+}
 /* Medium screens and up - 2x2 grid */
 @media (min-width: 768px) {
   .gaugesGrid {
@@ -55,7 +114,12 @@
     padding: 1.5rem;
   }
 
-  .title {
+
+}
+
+
+@media (max-width: 1025px){
+    .title {
     font-size: 1.5rem;
     letter-spacing: 2px;
     margin-bottom: 0.5rem;
@@ -76,11 +140,11 @@
     margin-bottom: 2rem;
   }
 
-  .title {
-    font-size: 2.6rem;
+   .title {
+    font-size: 3.6rem;
     letter-spacing: 2px;
     margin-bottom: 0.5rem;
-  }
+  } 
 
   .subtitle {
     font-size: 1rem;

@@ -36,13 +36,13 @@ export default function GaugeContainer({ data }) {
         0,
     },
     {
-      title: "Funeral",
+      title: "MyWorld",
       currentValue: companyMetrics.totalAppsActual || 0,
       targetValue: companyMetrics.totalAppsTarget || 0,
       averageAchievement: companyMetrics.appsAchievement || 0,
     },
     {
-      title: "MyWorld",
+      title: "Funeral",
       currentValue: companyMetrics.consultantPerformance || 0,
       targetValue: 100,
       averageAchievement: companyMetrics.consultantAchievement || 0,
@@ -57,7 +57,8 @@ export default function GaugeContainer({ data }) {
 
   return (
     <>
-      <h2 className={styles.title}>PERFORMANCE TARGET OVERVIEW</h2>
+      <h2 className={`${styles.title} ${styles.Slackey}`}>PERFORMANCE TARGET OVERVIEW</h2>
+      {/* className={`${styles.title} ${styles.FastOne}` */}
       <div className={styles.container}>
         <div className={styles.header}>
           {/* <p className={styles.subtitle}>
@@ -91,7 +92,7 @@ export default function GaugeContainer({ data }) {
       /> */}
       </div>
 
-      <h3 className={styles.title}> Points REDEEMED Overview</h3>
+      <h3 className={`${styles.title} ${styles.Slackey}`}> Points REDEEMED Overview</h3>
       <div className={styles.container}>
         <PointsChestView />
       </div>

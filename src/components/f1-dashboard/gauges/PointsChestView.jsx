@@ -51,10 +51,10 @@ export default function PointsChestView() {
       {chestData.map((item, index) => (
         <div key={index} className={styles.gridItem}>
           {/* <h2 className={styles.itemTitle}>{item.title}</h2> */}
-          <h2 className={`${styles.itemTitle} ${styles.FastOne}`}>
+          <h2 className={`${styles.itemTitle} ${styles.Slackey}`}>
             {item.title}
           </h2>
-          <h3 className={styles.p_available}>
+          <h3 className={`${styles.p_available} ${styles.Slackey}`}>
             {item.pointsAvailable} Available
           </h3>
 
@@ -68,7 +68,7 @@ export default function PointsChestView() {
             </div>
           </div>
 
-          <div className={styles.pointsDisplay}>{item.points} Redeemed</div>
+          <div className={`${styles.pointsDisplay} ${styles.Slackey}`}>{item.points} Redeemed</div>
         </div>
       ))}
     </div>

@@ -26,7 +26,7 @@ export default function GaugeDisplay({
 
   return (
     <div className={styles.container}>
-      {title && <div className={styles.gaugeTitle}>{title}</div>}
+      {title && <div className={`${styles.gaugeTitle} ${styles.Slackey}`}>{title}</div>}
 
       <div className={styles.gaugeWrapper}>
         <svg viewBox="0 0 200 120" className={styles.gaugeSvg}>
@@ -55,7 +55,7 @@ export default function GaugeDisplay({
           />
 
           {/* Tick marks */}
-          {[...Array(11)].map((_, i) => {
+          {[...Array(20)].map((_, i) => {
             const angle = -90 + i * 18;
             const x1 = 100 + 72 * Math.cos((angle * Math.PI) / 180);
             const y1 = 100 + 72 * Math.sin((angle * Math.PI) / 180);
