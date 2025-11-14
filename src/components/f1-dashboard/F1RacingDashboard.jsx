@@ -38,10 +38,10 @@ export default function F1RacingDashboard({
         const jsonData_Sales = XLSX.utils.sheet_to_json(worksheet_sales, { raw: false });
         const jsonData_Points = XLSX.utils.sheet_to_json(worksheet_points, { raw: false });
 
-        console.log("=== ACTUAL POINTS FILE STRUCTURE ===");
-        console.log("Number of rows:", jsonData_Points?.length);
-        console.log("Columns:", jsonData_Points && jsonData_Points.length > 0 ? Object.keys(jsonData_Points[0]) : []);
-        console.log("First 3 rows:", jsonData_Points?.slice(0, 3));
+        // console.log("=== ACTUAL POINTS FILE STRUCTURE ===");
+        // console.log("Number of rows:", jsonData_Points?.length);
+        // console.log("Columns:", jsonData_Points && jsonData_Points.length > 0 ? Object.keys(jsonData_Points[0]) : []);
+        // console.log("First 3 rows:", jsonData_Points?.slice(0, 3));
 
         const processedData = processExcelData(jsonData_Sales, jsonData_Points);
         setData(processedData);
@@ -75,16 +75,16 @@ export default function F1RacingDashboard({
     return supervisorName?.charCodeAt(0) % 2 === 0 ? "Monaco" : "Kyalami";
   };
 
-  const parseNumber = (value) => {
-    if (value === null || value === undefined || value === '') return 0;
-    if (typeof value === 'string') {
-      const cleaned = value.replace(/[^\d.-]/g, '');
-      const num = parseFloat(cleaned);
-      return isNaN(num) ? 0 : Math.ceil(num);
-    }
-    const num = typeof value === 'number' ? value : parseFloat(value);
-    return isNaN(num) ? 0 : Math.ceil(num);
-  };
+const parseNumber = (value) => {
+  if (value === null || value === undefined || value === '') return 0;
+  if (typeof value === 'string') {
+    const cleaned = value.replace(/[^\d.-]/g, '');
+    const num = parseFloat(cleaned);
+    return isNaN(num) ? 0 : num;
+  }
+  const num = typeof value === 'number' ? value : parseFloat(value);
+  return isNaN(num) ? 0 : num;
+};
 
   const processExcelData = (salesData, pointsData) => {
     if (!salesData || salesData.length === 0) {
@@ -99,7 +99,7 @@ export default function F1RacingDashboard({
       const firstRow = pointsData[0];
       const columns = Object.keys(firstRow);
       
-      console.log("Available columns in points file:", columns);
+      // console.log("Available columns in points file:", columns);
       
       pointsData.forEach(row => {
         const supervisorName = row["Supervisor Name"];
@@ -270,10 +270,10 @@ export default function F1RacingDashboard({
     companyMetrics.overallAchievement = (companyMetrics.salesAchievement + companyMetrics.appsAchievement) / 2;
 
     // Final check
-    console.log("=== FINAL POINTS VERIFICATION ===");
-    supervisors.forEach((sup) => {
-      console.log(`${sup.supervisorName}: MyWorldPoints = ${sup.points.myWorldPoints}`);
-    });
+    // console.log("=== FINAL POINTS VERIFICATION ===");
+    // supervisors.forEach((sup) => {
+    //   console.log(`${sup.supervisorName}: MyWorldPoints = ${sup.points.myWorldPoints}`);
+    // });
 
     return {
       supervisors,

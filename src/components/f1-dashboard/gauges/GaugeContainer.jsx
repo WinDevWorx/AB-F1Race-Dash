@@ -4,11 +4,13 @@ import styles from "./GaugeContainer.module.css";
 import PointsChestView from "./PointsChestView";
 
 export default function GaugeContainer({ data }) {
-  if (!data || !data.companyMetrics) {
+  if (!data || !data.companyMetrics || !data.pointsData) {
     return null;
   }
 
   const { companyMetrics } = data;
+
+
 
   // Debug logging to trace the data flow
   console.log("GaugeContainer received data:", data);
@@ -35,35 +37,35 @@ export default function GaugeContainer({ data }) {
         companyMetrics.overallAchievement ||
         0,
     },
+    /* NEW GAUGES AND VALUES*/
     {
       title: "MyWorld",
-      currentValue: companyMetrics.totalAppsActual || 0,
-      targetValue: companyMetrics.totalAppsTarget || 0,
-      averageAchievement: companyMetrics.appsAchievement || 0,
+      currentValue:  companyMetrics.totalMyWorldFunded || 0,
+      targetValue: companyMetrics.totalMyWorldTarget || 0,
+      averageAchievement: companyMetrics.myWorldAchievement || 0,
     },
     {
       title: "Funeral",
-      currentValue: companyMetrics.consultantPerformance || 0,
-      targetValue: 100,
-      averageAchievement: companyMetrics.consultantAchievement || 0,
+      currentValue: companyMetrics.totalFuneralVol || 0,
+      targetValue: companyMetrics.totalFuneralTarget || 0,
+      averageAchievement: companyMetrics.funeralAchievement || 0,
     },
+
+    /* New Gauge NO DATA YET  */
     {
       title: "Investments",
-      currentValue: companyMetrics.supervisorPerformance || 0,
-      targetValue: 100,
-      averageAchievement: companyMetrics.supervisorAchievement || 0,
+      currentValue: 0 || 0,
+      targetValue: 115,
+      averageAchievement: 5 || 0,
     },
   ];
 
   return (
     <>
       <h2 className={`${styles.title} ${styles.Slackey}`}>PERFORMANCE TARGET OVERVIEW</h2>
-      {/* className={`${styles.title} ${styles.FastOne}` */}
       <div className={styles.container}>
         <div className={styles.header}>
-          {/* <p className={styles.subtitle}>
-          Real Applications Performance Dashboard
-        </p> */}
+     
         </div>
 
         {/* Always use 2x2 grid, but adjust sizing based on screen size */}
@@ -80,21 +82,12 @@ export default function GaugeContainer({ data }) {
           ))}
         </div>
 
-        {/* Uncomment if you still need the metrics section */}
-        {/* <GaugeMetrics 
-        totalConsultants={companyMetrics.totalConsultants}
-        totalSupervisors={companyMetrics.totalSupervisors}
-        totalRealApps={companyMetrics.totalAppsActual}
-        totalTarget={companyMetrics.totalAppsTarget}
-        totalSales={companyMetrics.totalSalesActual || companyMetrics.currentValue || 0}
-        totalSalesTarget={companyMetrics.totalSalesTarget || companyMetrics.targetValue || 240000000}
-        averageAchievement={companyMetrics.salesAchievement || companyMetrics.overallAchievement || 0}
-      /> */}
+
       </div>
 
-      <h3 className={`${styles.title} ${styles.Slackey}`}> Points REDEEMED Overview</h3>
+      <h3 className={`${styles.title} ${styles.Slackey}`}> Championship Pool</h3>
       <div className={styles.container}>
-        <PointsChestView />
+        <PointsChestView pointsData={data.pointsData} />
       </div>
     </>
   );

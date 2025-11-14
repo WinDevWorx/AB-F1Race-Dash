@@ -94,7 +94,7 @@ export default function GaugeDisplay({
             y1="100"
             x2="100"
             y2="30"
-            stroke="#ff4500"
+            stroke="#fff200ff"
             strokeWidth="3"
             strokeLinecap="round"
             transform={`rotate(${gaugeData.needleAngle} 100 100)`}
